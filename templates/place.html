@@ -1,0 +1,53 @@
+<ion-view title="Chat" view-title="Chat" cache-view="false" style="color:#22A7F0">
+<div class="bar bar-subheader bar-dark">
+	<div class="row">
+		<div class="col col-50 colorize" style="text-align:center;background">
+			<i class="ion-location"> {{place.checkins}} Checkins</i>
+		</div>
+		<div class="col col-50 colorize" style="text-align:center;">
+			<i class="icon ion-sad-outline" ng-show="place.rating < 4" style=""> {{place.rating}}/5 </i>
+			<i class="icon ion-happy-outline" ng-show="place.rating >= 4" style=""> {{place.rating}}/5 </i>
+		</div>
+	</div>
+</div>
+ 
+<ion-view title="{{place.name}}" view-title="{{place.name}}" style="margin-top:100px;background-color:#333333; background:#333333;padding-bottom:100px !important;overflow:scroll;">
+	<ion-list ng-controller="PlaceCtrl"
+	show-delete="shouldShowDelete"
+	show-reorder="shouldShowReorder"
+	style="margin-top:60px;"
+	can-swipe="listCanSwipe">
+		<ion-item ng-repeat="message in messageArray | orderBy: '-points'"
+		class="" style="white-space:normal !important;background-color:#333333;">
+			<div class="row" style="padding: 16px 49px 16px 16px;background-color:#333333;">
+				<div class="col-45 colorize" style="background-color:#333333;">
+					<h2  style="font-size:12px;margin-right:-10px;"><i class="ion-ios-pulse"></i> {{message.points}}</h2>
+					<p style="font-size:12px;margin-left:0px;float:left;overflow:visible;"><i class="ion-ios-at-outline"></i> {{message.created | date: 'shortTime'}}</p>
+				</div>
+				<div class="col-55">
+					<p  style="white-space:normal !important;color:white;padding-top:6px;margin-left:50px;float:left;text-align:left;color:#22A7F0">{{message.message}}</p>
+				</div>
+				<ion-option-button ng-if="place.allowChat" class="button-positive"
+				ng-click="down(message)">
+				DownVote
+				</ion-option-button>
+				<ion-option-button class="button-info"  ng-if="place.allowChat" ng-click="up(message)">
+				UpVote
+				</ion-option-button>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-view>
+	<ion-footer-bar class="bar-dark" style="height:60px;" ng-controller="PlaceCtrl" ng-if="place.allowChat">
+		<div class="list" style="background-color:#333333;width:100%;position:absolute;z-index:50;">
+		  <div class="item item-input-inset" style="background-color:#333333;border:none;">
+		    <label class="item-input-wrapper" style="background-color:#333333;">
+		      <input type="text" placeholder="Message" id="message" style="width:99%;background-color:#333333;color:#22A7F0">
+		    </label>
+		    <button class="button button-small" ng-click="postMessage()">
+		      Send
+		    </button>
+		  </div>
+		</div>
+	</ion-footer-bar>
+</ion-view>

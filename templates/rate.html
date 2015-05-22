@@ -1,0 +1,24 @@
+<ion-modal-view id="rate.html">
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Rate</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="positive" style="background-color:#444444">
+    <form ng-submit="doLogin()">
+      <div class="list">
+        
+          <div class="item range range-positive" style="background-color:#444444">
+            <i class="icon ion-sad-outline positive" style="color:#22A7F0"></i>
+            <input type="range" id="rating" name="rating" min="0" max="100" ng-model="place.rating">
+            <i class="icon ion-happy-outline" style="color:#22A7F0"></i>
+          </div>
+     
+        <label class="item" style="background-color:#444444">
+          <button  class="button button-block button-positive" type="submit" ng-click="closeModal()">Rate</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

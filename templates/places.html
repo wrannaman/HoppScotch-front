@@ -1,0 +1,205 @@
+<ion-view view-title="Places" cache-view="false" style="background-color:#333333;color:#22A7F0;padding:0px !important;">
+  <ion-content style="padding:0px !important;">
+  	<ion-list style="padding:0px !important;">
+      <ion-item class="" ng-repeat="place in places" href="#/app/places/{{places.name}}" style="padding:0px !important;background-color:#333333;">
+
+      <div ng-click="goToPlace(place)" style="background-color:#333333;" class="">
+	      <div class="row " style="background-color:#333333;padding:0px;">
+	      	<div class="col col-20 gradient" style="text-align:center;background-color:#333333;">
+	      		<p class="fira-strong" style="margin-top:15px;color:white;font-size:20px">{{place.rating}}</p>
+	      		<i class="icon ion-ios-pulse" style="color:white;"></i>
+	      	</div>
+	      	<div class="col col-70">
+	      		<div class="row" style="display:block; color:#22A7F0">
+	      		<h2 class="fira" style="color:#22A7F0">
+	      			{{place.name}}
+	      		</h2>
+	      		<h5 class="fira" style="margin-left:5px;color:#22A7F0;">
+	      			{{place.address}}
+	      		</h5>
+	      		</div>
+	      		<div class="row">
+	      			<div class="col col-50" style="text-align:left;">
+			      		<p class="fira" style="width:100%;color:#22A7F0;">{{place.comments}} <i style="color:#22A7F0;" class="icon ion-ios-chatbubble-outline"></i></p>
+			      	</div>
+			      	<div class="col col-50" style="display:inline-flex;color:#22A7F0;text-align:left">
+			      		<p class="fira" style="width:100%;color:#22A7F0;">{{place.checkins}} <i style="color:#22A7F0;" class="icon ion-ios-location-outline"></i></p> 
+			      		
+			      	</div>
+	      		</div>
+	      	</div>
+	      	<div class="col col-10" style="margin-top:22px;color:#22A7F0;">
+	      		<i class="icon ion-ios-arrow-right" style="float:right;margin-right:15px;"></i>
+	      	</div>
+	      </div>
+
+	      <!-- <div class="row">
+	      	<div class="col col-33">
+	      		<p class="fira-strong" style="width:100%; text-align:center;"></p>
+	      	</div>
+	      	<div class="col col-33">
+	      		<p class="fira" style="width:100%; text-align:center;">{{place.comments}} Comments</p>
+	      	</div>
+	      	<div class="col col-33">
+	      		<p class="fira" style="width:100%; text-align:center;">{{place.checkins}} Checkins</p> 
+	      	</div>
+	      </div> -->
+      </div>
+
+
+      	
+		
+		
+		
+		
+		<!-- <img src="{{place.icon}}" style="width:50px;height:50px;"> -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<!-- <ion-view view-title="Places" style="color:#404040">
+  <ion-content >
+      <div class="fancyList" ng-repeat="place in places" href="#/app/places/{{places.name}}" style="padding:0px !important; height:150px">
+      	<div class="" ng-click="goToPlace(place)">
+      		<div class="" style="">
+			 	<div class="row" >
+			 		<div class="col col-20" style="background-color:">
+			 			<div class="row" style="position: relative;top: 20px; ">
+		    			<p style="width:100%;text-align:center;"> {{place.rating}}/5</p>
+			    		</div>
+			    		<div class="row" style="position: relative;top: 20px;">
+			    			<i style="font-size:35px;width:100%;text-align:center;" class="icon ion-sad-outline" ng-show="{{place.rating}} < 4 && {{place.rating}} > 0"></i>
+					    	<i style="font-size:35px;width:100%;text-align:center;" class="icon ion-happy-outline" ng-show="{{place.rating}} >= 4"></i>
+					    	<i style="font-size:35px;width:100%;text-align:center;" class="icon ion-ios-help" ng-show="{{place.rating}} == 0"></i>
+			    		</div>
+			 		</div>
+			 		<div class="col col-70">
+				 		<div class="row" style="display:block;">
+					 		<h4 id="name" style="color:white">{{place.name}}</h4>
+						    <p  id="address">{{place.address}}</p>
+				 		</div>
+				 		<div class="row">
+					 		<div class="col col-50">
+					 			<div class="row" >
+									<p style="width:100%">{{place.checkins}} Checkins</p>
+					    		</div>
+					 		</div>
+					 		<div class="col col-50">
+					 			<div class="row" >
+									<p style="width:100%">{{place.comments}} Comments</p>
+					    		</div>
+					 		</div>
+				 		</div>
+			 		</div>
+			 		<div class="col col-10">
+				 		<a href="#" class=""ng-click="goToPlace(place)" style="position: relative;top: 50px;">
+					      <i class="icon icon-right ion-ios-arrow-right" style=""></i>
+						</a>
+			 		</div>
+			    </div>
+		    </div>
+		</div>
+      </div>
+  </ion-content>
+</ion-view> -->
+<!-- <ion-view view-title="Places" >
+  <ion-content >
+    <ion-list>
+    <!-- bind once -->
+      <!-- <ion-item ng-repeat="place in places" href="#/app/places/{{places.name}}">
+      	<div class="list" style="
+      		background: -webkit-linear-gradient(#6BB9F0, white); /* For Safari 5.1 to 6.0 */
+  			background: -o-linear-gradient(#19B5FE, white); /* For Opera 11.1 to 12.0 */
+  			background: -moz-linear-gradient(#19B5FE, white); /* For Firefox 3.6 to 15 */
+  			background: linear-gradient(#19B5FE, white); /* Standard syntax */;
+  			z-index: 0;position: relative;">
+      		<div class="" style="">
+			 	<div class="row" style="display:block; color:white;">
+				    <h2 id="name" style="color:white">{{place.name}}</h2>
+				    <p style="white-space:normal;word-break:normal;overflow:visible;font-size:.75em; color:white;" id="address">{{place.address}}</p>
+			    </div> -->
+			    <!-- <div style="width:0;height:0;border-left: 20px solid transparent;border-right: 20px solid transparent;border-top: 20px solid white;position:relative;z-index:100;"></div> -->
+		   <!--  </div>
+
+		    <div class="row" style="margin-top:0px;color:white;height:100px;">
+		    	<div class="col col-33">
+		    		<div class="row" style="text-align:center;">
+						<p style="width:100%;color:white;">{{place.checkins}}</p>
+		    		</div>
+		    		<div class="row" style="text-align:center;">
+		    			<p style="width:100%;color:white;">Checkins</p>
+		    		</div>
+		    	</div>
+		    	<div class="col col-33" >
+		    		<div class="row" style="text-align:center;">
+						<p style="width:100%;color:white;">{{place.comments}} </p>
+		    		</div>
+		    		<div class="row" style="text-align:center;">
+		    			<p style="width:100%;color:white;">Comments</p>
+		    		</div>
+		    	</div>
+		    	<div class="col col-33">
+		    		<div class="row" style="text-align:center;">
+		    			<p style="width:100%;color:white;">{{place.rating}}/5</p>
+		    		</div>
+		    		<div class="row" style="text-align:center;">
+		    			<i style="width:100%;color:white;" class="icon ion-sad-outline" ng-show="{{place.rating}} < 4 && {{place.rating}} > 0"></i>
+				    	<i style="width:100%;color:white;" class="icon ion-happy-outline" ng-show="{{place.rating}} >= 4"></i>
+				    	<i style="width:100%;color:white;" class="icon ion-ios-help" ng-show="{{place.rating}} == 0"></i>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div style="width:0;height:0;border-left: 20px solid transparent;border-right: 20px solid transparent;border-top: 20px solid #white;"></div>
+
+		    <div class="row" style="text-align:center;background-color:#white">
+		    	<a href="#" class="" style="text-decoration:none;width:100%;color:#19B5FE; text-align:center;" ng-click="goToPlace(place)">
+			      <p style="width:100%; text-align:center;color:#19B5FE;">View Live Feed</p>
+				</a>
+		    </div>
+		</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view> --> -->
+<!-- <ion-view view-title="Places" >
+  <ion-content >
+    <ion-list>
+   
+      <ion-item ng-repeat="place in places" href="#/app/places/{{places.name}}">
+      	<div class="list card">
+		  <div class="item item-avatar">
+		    <img src="{{place.icon}}">
+		    <h2 id="name">{{place.name}}</h2>
+		    <p style="white-space:normal;word-break:normal;overflow:visible;font-size:.75em;" id="address">{{place.address}}</p>
+		  </div>
+
+		  <div class="item item-body" style="padding:0px;">
+		   
+		      <a href="#" class="item item-icon-left">
+			    <i class="icon ion-location"></i>
+			    {{place.checkins}} Checkins
+			  </a>
+			  <a href="#" class="item item-icon-left">
+			    <i class="icon ion-home"></i>
+			    {{place.comments}} Comments
+			  </a>
+			  <a href="#" class="item item-icon-left">
+			    <i class="icon ion-sad-outline" ng-show="{{place.rating}} < 4"></i>
+			    <i class="icon ion-happy-outline" ng-show="{{place.rating}} >= 4"></i>
+			    <i class="icon ion-ios-help" ng-show="{{place.rating}} == '?'"></i>
+			    {{place.rating}}/5 Live Rating
+			  </a>
+		  </div>
+
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+		    <a href="#" class="item item-icon-left" ng-click="goToPlace(place)">
+			  <i class="icon ion-ios-chatbubble-outline"></i>
+		      View Live Feed
+			</a>
+		  </div>
+		</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view> -->
